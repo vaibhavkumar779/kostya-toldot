@@ -9,8 +9,9 @@
 3. [Deployment Steps](#deployment-steps)
 4. [Option 1 - Using DockerHub](#option-1---using-dockerhub)
 5. [Option 2 - Using a Private Repository](#option-2---using-a-private-repository)
-6. [Common Errors and Solutions](#common-errors-and-solutions)
-7. [Conclusion](#conclusion)
+6. [Pushing Image to Registry or DockerHub](#pushing-image-to-registry-or-dockerhub)
+7. [Common Errors and Solutions](#common-errors-and-solutions)
+8. [Conclusion](#conclusion)
 
 ## Introduction
 
@@ -84,6 +85,58 @@ If you have a private repository with pre-built Docker images, follow these step
    ```bash
     docker-compose up -d
    ```
+
+## Pushing Image to Registry or DockerHub
+
+The Image can created locally, this command should be run locally where Dockerfile is present.
+
+   ```bash
+    docker-compose build
+   ```
+
+Then We can push this image to repository we want.
+
+### Pushing Docker Image to Docker Hub
+
+1. Log in to Docker Hub using the Docker CLI:
+
+   ```bash
+   docker login
+   ```
+
+2. Tag your Docker image with your Docker Hub username and the desired repository name:
+
+   ```bash
+   docker-compose tag <service-name> <docker-hub-username>/<repository-name>:<tag>
+   ```
+
+3. Push the tagged image to Docker Hub:
+
+   ```bash
+    docker-compose push <service-name>
+   ```
+
+### Pushing Docker Image to a Private Container Registry
+
+1. Log in to the private container registry using the Docker CLI. The exact command may vary depending on the registry provider, but it is similar to the Docker Hub login command:
+
+   ```bash
+   docker login <registry-url>
+   ```
+
+2. Tag your Docker image with the private registry URL and the desired repository name:
+
+   ```bash
+   docker-compose tag <service-name> <registry-url>/<repository-name>:<tag>
+   ```
+
+3. Push the tagged image to the private container registry:
+
+   ```bash
+    docker-compose push <service-name>
+   ```
+
+   **Note:** Before pushing an image to a private container registry, ensure that you have proper authentication and permissions to access the registry. Different container registry providers have their own authentication methods, so consult the documentation of your specific registry for more details.
 
 ## Common Errors and Solutions
 
