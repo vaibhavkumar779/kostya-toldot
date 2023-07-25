@@ -33,7 +33,7 @@ Follow these steps to deploy the Django application with Scrapy integration usin
 2. Navigate to the project directory:
 
    ```bash
-   cd django-scrapy-app
+   cd kostya-toldot
    ```
 
 3. Run the containers:
