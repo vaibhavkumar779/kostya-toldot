@@ -1,0 +1,18 @@
+# Ignore development and unnecessary files
+venv/
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore Docker-related files
+Dockerfile
+docker-compose.yml
+
+# Ignore database files
+*.db
+*.sqlite3
+
+
+# Ignore any other temporary or unnecessary files
+*.log
+*.swp
