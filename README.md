@@ -21,17 +21,84 @@ This repository contains a Django application with Scrapy integration, along wit
 
 To deploy this application, you'll need the following:
 
-- [Docker installed on your local machine or server.](./InstallDocker.txt)
-- [Docker Compose to manage multi-container applications.](./InstallDockerCompose.txt)
+1. [Docker installed on your local machine or server.](./InstallDocker.txt)
+   If OS = CentOS then follow these steps to install Docker
+
+   1.1. Installing docker config files
+
+   ```bash
+   sudo yum install -y yum-utils
+   sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+   ```
+
+   1.2. Install all docker plugins
+
+   ```bash
+   sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   ```
+
+   1.3. start docker
+
+   ```bash
+   sudo systemctl start docker
+   ```
+
+   1.4. check if docker installed
+
+   ```bash
+   sudo docker run hello-world
+   ```
+
+   Some More steps tp use docker
+
+   1.5 create user group
+
+   ```bash
+   sudo groupadd docker
+   ```
+
+   1.7. add basic user to user group
+
+   ```bash
+   sudo usermod -aG docker $USER
+   ```
+
+   1.8. activate user group changes
+
+   ```bash
+   newgrp docker
+   ```
+
+   1.9. cross check
+
+   ```bash
+   docker run hello-world
+   ```
+
+2. [Docker Compose to manage multi-container applications.](./InstallDockerCompose.txt)
+
+   2.1. Install Docker Compose OS=CentOS
+
+   ```bash
+   sudo yum update
+   
+   sudo yum install docker-compose-plugin
+   ```
+
+   2.2. cross check if installed
+
+   ```bash
+   docker compose version
+   ```
 
 ## Deployment Steps
 
 You need git on local system so install it on centos system
 
-```bash
-yum install git
-git --version
-```
+   ```bash
+   yum install git
+   git --version
+   ```
 
 Follow these steps to deploy the Django application with Scrapy integration using Docker:
 
