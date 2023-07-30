@@ -26,9 +26,20 @@ To deploy this application, you'll need the following:
 
 ## Deployment Steps
 
+You need git on local system so install it on centos system
+
+```bash
+yum install git
+git --version
+```
+
 Follow these steps to deploy the Django application with Scrapy integration using Docker:
 
 1. Clone this repository to your local machine or server.
+
+   ```bash
+   git clone  git@github.com:vaibhavkumar779/kostya-toldot.git
+   ```
 
 2. Navigate to the project directory:
 
