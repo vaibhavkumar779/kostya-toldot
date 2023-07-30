@@ -21,8 +21,8 @@ This repository contains a Django application with Scrapy integration, along wit
 
 To deploy this application, you'll need the following:
 
-- Docker installed on your local machine or server.
-- Docker Compose to manage multi-container applications.
+- [Docker installed on your local machine or server.](./InstallDocker.txt)
+- [Docker Compose to manage multi-container applications.](./InstallDockerCompose.txt)
 
 ## Deployment Steps
 
@@ -48,7 +48,7 @@ Follow these steps to deploy the Django application with Scrapy integration usin
    docker ps
    ```
 
-5. The Django application should now be accessible at <http://localhost:8000> in your browser.
+5. The Django application should now be accessible at <http://localhost:8000/admin> in your browser. Remember that to use it on your url make it available to public. Then replace localhost with your IP. Now login to your admin with username='root', password='654zz321xx'
 
 ## Option 1 - Using DockerHub
 

@@ -1,0 +1,9 @@
+1. Install Docker Compose OS=CentOS
+
+sudo yum update
+
+sudo yum install docker-compose-plugin
+
+2. cross check if installed
+
+docker compose version

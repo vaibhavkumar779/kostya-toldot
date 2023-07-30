@@ -1,0 +1,36 @@
+If OS = CentOS then follow these steps to install Docker
+
+1. Installing docker config files
+
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+2. Install all docker plugins
+
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+3. start docker
+
+sudo systemctl start docker
+
+4. check if docker installed
+
+sudo docker run hello-world
+
+Some More steps tp use docker
+
+1. create user group
+
+sudo groupadd docker
+
+2. add basic user to user group
+
+sudo usermod -aG docker $USER
+
+3. activate user group changes
+
+newgrp docker
+
+4. cross check 
+
+docker run hello-world
