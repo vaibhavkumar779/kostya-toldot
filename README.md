@@ -117,7 +117,7 @@ Follow these steps to deploy the Django application with Scrapy integration usin
 3. Run the containers:
 
    ```bash
-    docker-compose up -d
+    docker compose up -d
    ```
 
 4. Verify that the containers are running:
