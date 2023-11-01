@@ -1,3 +1,16 @@
+if OS = Ubuntu
+1. Install Docker Compose OS=CentOS
+
+sudo yum update
+
+sudo yum install docker-compose-plugin
+
+2. cross check if installed
+
+docker compose version
+
+
+if OS =CentOS
 1. Install Docker Compose OS=CentOS
 
 sudo yum update
