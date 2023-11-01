@@ -22,30 +22,19 @@ This repository contains a Django application with Scrapy integration, along wit
 To deploy this application, you'll need the following:
 
 1. [Docker installed on your local machine or server.](./InstallDocker.txt)
-   If OS = Ubuntu follow these steps to install Docker
+   If OS = CentOS then follow these steps to install Docker
 
    1.1. Installing docker config files
 
    ```bash
-      sudo apt-get update
-      sudo apt-get install ca-certificates curl gnupg
-      sudo install -m 0755 -d /etc/apt/keyrings
-      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-      sudo chmod a+r /etc/apt/keyrings/docker.gpg
-   ```
-
-   ```bash
-      echo \
-      "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-      "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-      sudo apt-get update
+   sudo yum install -y yum-utils
+   sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
    ```
 
    1.2. Install all docker plugins
 
    ```bash
-   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 
    1.3. start docker
@@ -91,9 +80,9 @@ To deploy this application, you'll need the following:
    2.1. Install Docker Compose OS=CentOS
 
    ```bash
-   sudo apt update
+   sudo yum update
    
-   sudo apt install docker-compose-plugin
+   sudo yum install docker-compose-plugin
    ```
 
    2.2. cross check if installed
@@ -107,7 +96,7 @@ To deploy this application, you'll need the following:
 You need git on local system so install it on centos system
 
    ```bash
-   sudo apt install git
+   yum install git
    git --version
    ```
 
