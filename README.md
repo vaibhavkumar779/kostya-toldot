@@ -121,25 +121,6 @@ To deploy this application, you'll need the following:
 
 ## Deployment Steps
 
-You need git on local system so install it on  system
-
-   ```bash
-   sudo apt install git
-   git --version
-   ```
-
-You can configure ssl certifactes if you have otherwise use **openssl**
-
-   ```bash
-   sudo apt install openssl
-   ```
-
-   ```bash
-   openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout ssl/private/server.key -out ssl/certs/server.crt
-   ```
-
-Note: cross check in docker compose the file location before going for next steps
-
 Follow these steps to deploy the Django application with Scrapy integration using Docker:
 
 1. Clone this repository to your local machine or server.
@@ -154,19 +135,58 @@ Follow these steps to deploy the Django application with Scrapy integration usin
    cd kostya-toldot
    ```
 
-3. Run the containers:
+3. You need git on local system so install it on  system
+
+   ```bash
+   sudo apt install git
+   git --version
+   ```
+
+4. You can configure ssl certifactes if you have otherwise use **openssl**
+
+   ```bash
+   sudo apt install openssl
+   ```
+
+   Generate private key
+
+   ```bash
+   openssl genpkey -algorithm RSA -out ssl/server.key
+
+   ```
+
+   Generate Certificate Siging Request
+
+   ```bash
+   openssl req -new -key ssl/server.key -out ssl/server.csr
+   ```
+
+   Create Self Signed certificate
+
+   ```bash
+   openssl x509 -req -days 365 -in ssl/server.csr -signkey ssl/server.key -out ssl/server.crt
+   ```
+
+   ```bash
+   chmod 400 ssl/server.key
+   ```
+
+   Note: cross check in docker compose the file location before going for next steps
+
+5. Run the containers:
 
    ```bash
     docker compose up -d
    ```
 
-4. Verify that the containers are running:
+6. Verify that the containers are running:
 
    ```bash
    docker ps
    ```
 
-5. The Django application should now be accessible at <http://localhost:8000/admin> in your browser. Remember that to use it on your url make it available to public. Then replace localhost with your IP. Now login to your admin with username='root', password='654zz321xx'
+7. <p> The Django application should now be accessible at <http://IP:8000/admin> in your browser. 
+      Remember that to use it on your url make it available to public. Then replace localhost with your IP. Now login to your admin with username='root'password='654zz321xx'</p>
 
 ## Option 1 - Using DockerHub
 
