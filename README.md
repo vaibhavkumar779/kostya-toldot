@@ -121,12 +121,24 @@ To deploy this application, you'll need the following:
 
 ## Deployment Steps
 
-You need git on local system so install it on centos system
+You need git on local system so install it on  system
 
    ```bash
    sudo apt install git
    git --version
    ```
+
+You can configure ssl certifactes if you have otherwise use **openssl**
+
+   ```bash
+   sudo apt install openssl
+   ```
+
+   ```bash
+   openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout ssl/private/server.key -out ssl/certs/server.crt
+   ```
+
+Note: cross check in docker compose the file location before going for next steps
 
 Follow these steps to deploy the Django application with Scrapy integration using Docker:
 
