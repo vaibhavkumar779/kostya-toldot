@@ -18,7 +18,6 @@ DATABASE = {
     "username": 'postgres',
     "password": '654zz321xx',
     "database": 'scraper_data',
-    "sslmode": "disable",
 }
 
 
