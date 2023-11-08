@@ -17,8 +17,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 654zz321xx
       POSTGRES_DB: scraper_data
-      POSTGRES_HOST_AUTH_METHOD: trust  # Set authentication method to trust to allow connections without a password
-      PGSSLMODE: require  # Enable SSL for the PostgreSQL connection
+      # POSTGRES_HOST_AUTH_METHOD: trust  # Set authentication method to trust to allow connections without a password
+      # PGSSLMODE: require  # Enable SSL for the PostgreSQL connection
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./ssl:/ssl  # Mount the directory containing SSL certificates
