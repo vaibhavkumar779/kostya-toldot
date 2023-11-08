@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 
 services:
   web:
@@ -18,7 +18,9 @@ services:
       POSTGRES_PASSWORD: 654zz321xx
       POSTGRES_DB: scraper_data
       POSTGRES_HOST_AUTH_METHOD: trust  # Set authentication method to trust to allow connections without a password
-      PGSSLMODE: disable  # Disable SSL for the PostgreSQL connection
+      PGSSLMODE: require  # Enable SSL for the PostgreSQL connection
+      POSTGRES_SSL_KEY: /etc/ssl/private/server.key
+      POSTGRES_SSL_CERT: /etc/ssl/certs/server.crt
     volumes:
       - pgdata:/var/lib/postgresql/data
 
