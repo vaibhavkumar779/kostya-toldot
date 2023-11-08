@@ -27,29 +27,34 @@ To deploy this application, you'll need the following:
    1.1. Installing docker config files
 
    ```bash
-      sudo apt-get update
-   ```
-   ```
-      sudo apt-get install ca-certificates curl gnupg
-   ```
-   ```
-      sudo install -m 0755 -d /etc/apt/keyrings
-   ```
-   ```
-      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-   ```
-   ```
-      sudo chmod a+r /etc/apt/keyrings/docker.gpg
+   sudo apt-get update
    ```
 
    ```bash
-      echo \
-      "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-      "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   sudo apt-get install ca-certificates curl gnupg
    ```
+
+   ```bash
+   sudo install -m 0755 -d /etc/apt/keyrings
    ```
-      sudo apt-get update
+
+   ```bash
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   ```
+
+   ```bash
+   sudo chmod a+r /etc/apt/keyrings/docker.gpg
+   ```
+
+   ```bash
+   echo \
+   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   ```
+
+   ```bash
+   sudo apt-get update
    ```
 
    1.2. Install all docker plugins
@@ -102,7 +107,9 @@ To deploy this application, you'll need the following:
 
    ```bash
    sudo apt update
-   
+   ```
+
+   ```bash
    sudo apt install docker-compose-plugin
    ```
 
@@ -182,7 +189,7 @@ If you have a private repository with pre-built Docker images, follow these step
 3. Run the containers:
 
    ```bash
-    docker-compose up -d
+   docker-compose up -d
    ```
 
 ## Pushing Image to Registry or DockerHub
@@ -190,7 +197,7 @@ If you have a private repository with pre-built Docker images, follow these step
 The Image can created locally, this command should be run locally where Dockerfile is present.
 
    ```bash
-    docker-compose build
+   docker-compose build
    ```
 
 Then We can push this image to repository we want.
