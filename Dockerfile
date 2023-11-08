@@ -26,4 +26,5 @@ EXPOSE 8000
 RUN python manage.py collectstatic --noinput
 
 # Start the Django application using Gunicorn
-CMD ["gunicorn", "server.wsgi", "--log-file", "-"]
+# CMD ["gunicorn", "server.wsgi", "--log-file", "-"]
+CMD ["gunicorn", "-c", "python:server.gunicorn", "server.wsgi"]

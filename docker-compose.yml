@@ -3,7 +3,6 @@ version: '3.9'
 services:
   web:
     build: .
-    command: gunicorn server.wsgi --bind 0.0.0.0:8000
     ports:
       - "8000:8000"
     env_file:
@@ -21,8 +20,8 @@ services:
       # PGSSLMODE: require  # Enable SSL for the PostgreSQL connection
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./ssl:/ssl  # Mount the directory containing SSL certificates
-    command: postgres -c ssl_cert_file=/ssl/server.crt -c ssl_key_file=/ssl/server.key
+    #   - ./ssl:/ssl  # Mount the directory containing SSL certificates
+    # command: postgres -c ssl_cert_file=/ssl/server.crt -c ssl_key_file=/ssl/server.key
 
 volumes:
   pgdata:
